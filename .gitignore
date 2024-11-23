@@ -7,3 +7,4 @@ Transformer/converted_segments/*
 Transformer/output_segments/*
 Transformer/mfcc_segments/*
 Tabnet/FMA 복사본/*
+DenseNet/ForDATA/tracks.csv

@@ -1,0 +1,8 @@
+dataset/fma_small/*
+dataset/FMA_IMAGES/*
+dataset/fma_wav_pcm/*
+dataset/fma_wav_pcm_echo/*
+dataset/fma_metadata/*
+Transformer/converted_segments/*
+Transformer/output_segments/*
+Transformer/mfcc_segments/*

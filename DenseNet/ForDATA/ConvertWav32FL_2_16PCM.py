@@ -3,10 +3,10 @@ import soundfile as sf
 
 # FMA 데이터셋 경로 및 장르 설정
 base_dir = "/home/hwang-gyuhan/Workspace/dataset"
-input_dir = os.path.join(base_dir, "fma_wav")
-output_dir = os.path.join(base_dir, "fma_wav_pcm")
+input_dir = os.path.join(base_dir, "Spotify_wav")
+output_dir = os.path.join(base_dir, "Spotify_wav_pcm")
 
-genres = ['Electronic', 'Experimental', 'Folk', 'Hip-Hop', 'Instrumental', 'International', 'Pop', 'Rock']
+genres = ['Electronic', 'Experimental', 'Folk', 'Hip_Hop', 'Instrumental', 'International', 'Pop', 'Rock']
 
 # 변환 작업 시작
 i = 0

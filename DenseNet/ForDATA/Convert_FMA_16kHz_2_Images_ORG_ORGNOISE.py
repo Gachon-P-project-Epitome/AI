@@ -32,17 +32,27 @@ image_dir = "/home/hwang-gyuhan/Workspace/dataset/FMA_IMAGES/"
 if not os.path.exists(image_dir):
     os.makedirs(image_dir)
 i = 0                   # Number of sound files
+
+# ADD: 추가된 부분 - 29초 이상인 파일만 불러오기 위한 코드
 for g in genres:
-    for k, filename in enumerate(os.listdir(f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm/{g}')):
-        songname = f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm/{g}/{filename}'
+    for k, filename in enumerate(os.listdir(f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm/{g}')):
+        songname = f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm/{g}/{filename}'
+        
+        # ADD: 오디오 파일을 로드하고 길이를 확인
+        y, sr = librosa.load(songname, mono=True, sr=fs)  # Downsampling to 16 kHz
+        duration = librosa.get_duration(y=y, sr=sr)  # 오디오 길이 계산
+        
+        # ADD: 29.35초 이상인 파일만 선택
+        if duration < 29.35:
+            continue  # 29.35초 미만 파일은 건너뜀
+        
         print(songname.ljust(85), "  i =  ", i, "/", total_file)
         print(filename)
         filename1 = image_dir + filename.split("_")[0] +".png"
         filename2 = image_dir + filename.split("_")[0] +"_Noise.png"
         print ("filename1 = ",filename1)
         print ("filename2 = ", filename2)
-        y, sr = librosa.load(songname, mono=True, sr=fs)  # Downsampling to 16 kHz
-        print ("Sampling Frequency = ",sr)
+        
         noise_amp1 = 0.03 * np.random.uniform(size=len(y)) * np.amax(y)
         ynoise = y + noise_amp1
         # Nothing change -------------------------------------------------------
@@ -70,7 +80,8 @@ for g in genres:
                                             win_length=NFFT,
                                             window='hamm',
                                             center=True,
-                                            pad_mode='reflect', power=2.0, fmax=frequency_max
+                                            pad_mode='reflect', power=2.0,
+                                            fmax=frequency_max
                                             )
 
         S_dBnoise = librosa.power_to_db(Snoise, ref=np.max)

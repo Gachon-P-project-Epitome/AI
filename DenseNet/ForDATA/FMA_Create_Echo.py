@@ -55,15 +55,15 @@ def delay_to_file(audio_bytes, params, offset_ms, file_name, factor=1.0, num=1):
 i = 0
 genres = 'Electronic Experimental Folk Hip_Hop Instrumental International Pop Rock'.split()
 for g in genres:
-    for k, filename in enumerate(os.listdir(f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm/{g}')):
-        songname = f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm/{g}/{filename}'
+    for k, filename in enumerate(os.listdir(f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm/{g}')):
+        songname = f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm/{g}/{filename}'
         file_name = f'{g}/{filename}'
         print(songname, ", i =  ", i, "/8000")
-        newpath = f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm_echo/{g}'
+        newpath = f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm_echo/{g}'
         if not os.path.exists(newpath):
             os.makedirs(newpath)
         # Path to echoed files
-        new_name = f'/home/hwang-gyuhan/Workspace/dataset/fma_wav_pcm_echo/{g}/{filename}'
+        new_name = f'/home/hwang-gyuhan/Workspace/dataset/Spotify_wav_pcm_echo/{g}/{filename}'
         new_name = new_name.split(".")[0] + "_ECHO.wav"
         wav_params, wav_bytes = input_wave(songname )
         delay_to_file(wav_bytes, wav_params, offset_ms=250, file_name=new_name, factor=.25, num=3)

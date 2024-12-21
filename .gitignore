@@ -1,7 +1,8 @@
 dataset/fma_small/*
 dataset/FMA_IMAGES/*
-dataset/fma_wav_pcm/*
-dataset/fma_wav_pcm_echo/*
+dataset/Spotify/*
+dataset/vector/*
+dataset/fma/*
 dataset/fma_metadata/*
 Transformer/converted_segments/*
 Transformer/output_segments/*
@@ -10,3 +11,5 @@ Tabnet/FMA 복사본/*
 DenseNet/ForDATA/tracks.csv
 DenseNet/ForTraining&Testing/test_data.csv
 DenseNet/ForTraining&Testing/train_valid_data.csv
+DenseNet/ForTraining&Testing/figures/*
+DenseNet/ForTraining&Testing/weights/*

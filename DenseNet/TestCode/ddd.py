@@ -1,7 +1,7 @@
 import numpy as np
 
 # NPZ 파일 경로
-npz_file_path = "/home/hwang-gyuhan/Workspace/dataset/vector/Pop.npz"
+npz_file_path = "/home/hwang-gyuhan/Workspace/dataset/vector/Instrumental.npz"
 
 # NPZ 파일 로드
 data = np.load(npz_file_path, allow_pickle=True)

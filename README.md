@@ -12,6 +12,17 @@ For copyright concerns or inquiries, please contact gyuhanhwang@gmail.com.
 - FMA : https://github.com/mdeff/fma
 - Spotify : https://developer.spotify.com
 
+Number of NPZ files with song vectors by Spotify genre (29.35 seconds or longer)
+
+Pop: 899
+Rock: 974
+Folk: 975
+Hip_Hop: 969
+Experimental: 979
+Electronic: 957
+Instrumental: 917
+International: 962
+
 
 FMA : FMA used the Small dataset. 
 
